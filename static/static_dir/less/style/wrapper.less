@@ -1,0 +1,119 @@
+/* WRAPPER */
+
+.left-side {
+  position: relative;
+  min-height: 100vh;
+  text-align: center;
+  background: #000 url(../img/bg.jpg) no-repeat center;
+  background-size: cover;
+
+  header {
+    position: relative;
+    margin-top: 80px;
+
+    span {
+      margin-bottom: 6px;
+      display: block;
+      font-family: 'lato', sans-serif;
+      text-transform: uppercase;
+      font-size: 13px;
+      color: #999;
+      letter-spacing: 0.12em;
+    }
+
+    h3 {
+      margin: 0;
+      font-family: 'Playfair Display', serif;
+      font-size: 54px;
+      font-weight: 400;
+      line-height: 72px;
+      letter-spacing: 0.01em;
+    }
+  }
+}
+
+.right-side {
+  position: relative;
+  padding: 120px 120px 100px 120px;
+  height: 100vh;
+  background: #fff;
+
+  .input {
+    margin-top: 0;
+    margin-left: 0;
+
+    input {
+      font-size: 14px;
+    }
+  }
+
+  .cta {
+    margin-top: 40px;
+
+
+    .btn {
+      padding: 13px 25px;
+      border: none;
+      color: #fff;
+      display: inline-block;
+      background: hsl(20, 100%, 50%);
+      font-family: 'lato', sans-serif;
+      text-transform: uppercase;
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      border-radius: 24px;
+
+      &:hover {
+        .transition(.2s ease-in);
+        background: #ff3f00;
+      }
+    }
+
+    span {
+      margin-top: 10px;
+      margin-left: 30px;
+      display: inline-block;
+
+      a {
+        font-family: 'lato', sans-serif;
+        text-transform: uppercase;
+        font-size: 13px;
+        color: #999;
+        letter-spacing: 0.1em;
+      }
+    }
+  }
+
+  .social {
+    position: absolute;
+    padding: 0;
+    bottom: 30px;
+    right: 120px;
+
+    li {
+      margin-left: 8px;
+      display: inline-block;
+
+      &:last-child {
+
+        &:after {
+          display: none;
+        }
+      }
+
+      &:after {
+        padding-left: 10px;
+        content: "-";
+        color: hsl(20, 100%, 50%);
+      }
+
+      a {
+        font-family: 'lato', sans-serif;
+        text-transform: uppercase;
+        font-size: 13px;
+        color: #999;
+        letter-spacing: 0.1em;
+      }
+    }
+  }
+}

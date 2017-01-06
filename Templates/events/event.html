@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>EVENTS | DATASHOCK</title>
+	<meta name="viewport" content="initial-scale=1.0; maximum-scale=1.0; width=device-width;">
+</head>
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/event.css' %}">
+<link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
+<body>
+<div class="table-title">
+<h3>EVENTS</h3>
+	{{ warning }}
+	<form action = "/browse/">{% csrf_token %}
+        <button  type="submit">GO BACK TO MAIN PAGE</button>
+                </form>
+	<form action = "/myreservations/">{% csrf_token %}
+        <button  type="submit">MY RESERVATIONS</button>
+                </form>
+<form method="post" >{% csrf_token %}
+</div>
+<table class="table-fill">
+<thead>
+<tr>
+<th class="text-left">Date</th>
+<th class="text-left">Event Name</th>
+<th class="text-left">Available Tickets</th>
+<th class="text-left">Event Type</th>
+<th class="text-left">Showroom</th>
+<th class="text-left">City</th>
+<th class="text-left">Make Reservation</th>
+</tr>
+</thead>
+<tbody class="table-hover">
+
+{% for a,b,c,d,e,f,g in query_results %}
+
+<tr>
+<td class="text-left">{{ a }}</td>
+<td class="text-left">{{ b }}</td>
+<td class="text-left">{{ c }}</td>
+<td class="text-left">{{ d }}</td>
+<td class="text-left">{{ e }}</td>
+<td class="text-left">{{ f }}</td>
+<th class="text-left">
+	<input type="integer" placeholder="How many Reservations?" name= {{ g }} required>
+<button class="button yellow">
+	<div class="title">Add to cart</div>
+	<div class="price">FREE!</div>
+</button>
+	<div style="clear:both;"></div>
+</th>
+</tr>
+
+{% endfor %}
+</tbody>
+</table>
+</form>
+</body>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>MY RESERVATIONS | DATASHOCK</title>
+	<meta name="viewport" content="initial-scale=1.0; maximum-scale=1.0; width=device-width;">
+
+</head>
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/event.css' %}">
+
+<body>
+<div class="table-title">
+<h3>MY RESERVATIONS | {{email}}</h3>
+    <h4>{{ warning}}</h4>
+    <form action = "/browse/">{% csrf_token %}
+        <button  type="submit">GO BACK TO MAIN PAGE</button>
+                </form>
+<form method="post" >{% csrf_token %}
+</div>
+<table class="table-fill">
+<thead>
+<tr>
+<th class="text-left">Date</th>
+<th class="text-left">Event Name</th>
+<th class="text-left">Event Type</th>
+<th class="text-left">Purchased Tickets</th>
+<th class="text-left">Delete Reservation</th>
+</tr>
+</thead>
+<tbody class="table-hover">
+
+{% for a,b,c,d,e in query_results %}
+
+<tr>
+<td class="text-left">{{ a }}</td>
+<td class="text-left">{{ b }}</td>
+<td class="text-left">{{ c }}</td>
+<td class="text-left">{{ d }}</td>
+<th class="text-left">
+    <input type="integer" placeholder="Delete # Reservations" name= "partialInput{{ e }}" >
+    <input class="button yellow" type="submit" value="Delete # Reservations" name= "partialButton{{ e }}">
+    <input class="button yellow" type="submit" value="Delete All Reservation" name= {{ e }}>
+</th>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+</form>
+</body>
+

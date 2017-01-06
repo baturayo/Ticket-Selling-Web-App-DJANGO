@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>Sign Up Page</title>
+  {% load static %}
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'css/set1.css' %}">
+
+  <!--Google Fonts-->
+  <link href='https://fonts.googleapis.com/css?family=Playfair+Display' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body>
+<div id="main-wrapper">
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-6 left-side">
+
+        <header>
+          <span>Need an account?</span>
+          <h3>Create Account<br>Explore Events!</h3>
+        </header>
+      </div>
+      <div class="col-md-6 right-side">
+        <form method='POST' action=''>{% csrf_token %}
+        <span class="input input--hoshi">
+          <input class="input__field input__field--hoshi" type="text" id="" />
+          <label class="input__label input__label--hoshi input__label--hoshi-color-3">
+            <span class="input__label-content input__label-content--hoshi"></span>
+
+          </label>
+          {{ warning }}
+          {{ form.as_p }}
+        </span>
+
+        <div class="cta">
+          <button class="btn btn-primary pull-left" type='submit' action='/'>
+            Sign-Up Now
+          </button>
+          <span><a href="/">I am already a member</a></span>
+        </div>
+        </form>
+        <ul class="social list-inline">
+          <li><a href="https://www.facebook.com/baturayofluoglu">Facebook</a></li>
+          <li><a href="https://twitter.com">Twitter</a></li>
+          <li><a href="https://www.linkedin.com/in/baturay-ofluoğlu-b4043366?trk=hp-identity-name">Linkedin</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</div> <!-- end #main-wrapper -->
+
+<!-- Scripts -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+</body>
+</html>
+

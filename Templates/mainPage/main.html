@@ -1,0 +1,48 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        {% load static %}
+    <link rel="stylesheet" href="{% static 'css/menu.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/home_page.css' %}" />
+        <meta charset="UTF-8">
+        <title>SELECT EVENT | DATASHOCK</title>
+        <h2 align="center">PLEASE FILTER EVENTS BASED ON GIVEN CRITERIAS BELOW</h2>
+        <h3 align="center">{{welcome}}</h3>
+    </head>
+    <body>
+
+    <section class="container">
+    <form method="post" class =form >{% csrf_token %}
+        <select name ="Categories" class = dropdown>
+            {% for category in categories  %}
+            <option value= {{ category }} {{ category.category }} </option>
+            {% endfor %}
+        </select>
+        <select name ="Cities" class = dropdown>
+            {% for category in cities  %}
+            <option value= {{ category }}  {{ category.category }}</option>
+            {% endfor %}
+        </select>
+            <select name ="Showrooms" class = dropdown>
+            {% for category in showrooms  %}
+            <option value={{ category }}  {{ category.category }}</option>
+            {% endfor %}
+            </select>
+
+        <br><br/>
+                <label><br>Date Begin </br></label>
+    <input type="date" placeholder="MM-DD" name="DateBegin" required>
+
+    <label><br>Date End </br></label>
+    <input type="date" placeholder="MM-DD" name="DateEnd" required>
+
+
+<input type="submit" value="Filter Activities" >
+    </form>
+            <form method="post" action = "/myreservations/">{% csrf_token %}
+
+        <button class="button" type="submit">MY RESERVATIONS</button>
+                </form>
+        </section>
+    </body>
+    </html>

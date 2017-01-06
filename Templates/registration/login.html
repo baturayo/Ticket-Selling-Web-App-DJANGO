@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>---DATASHOCK---</title>
+    <h1>{{ title }}</h1>
+
+</head>
+<div class="login-page">
+  <div class="form">
+    <form method="post" class="login-form">
+       {% csrf_token %}
+       {{ form }}
+      <button type="submit">login</button>
+      <p class="message">Not registered? <a href="/signup">Create an account</a></p>
+    </form>
+  </div>
+</div>
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/home_page.css' %}" />
+</html>
